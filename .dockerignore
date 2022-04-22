@@ -1,0 +1,17 @@
+*.git/
+*.vscode/
+*manifests/
+
+*.test
+*.out
+
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+.dockerignore
+Dockerfile
+docker-compose.yaml
+.ekspose
