@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: servicecreator
+  name: servicecreator
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: servicecreator
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: servicecreator
+    spec:
+      serviceAccount: servicecreator-sa
+      containers:
+        - image: hardikinfracloud/servicecreator:1.0.0
+          imagePullPolicy: Always
+          name: servicecreator
+          resources:
+            limits:
+              cpu: "1"
+              memory: "256Mi"
